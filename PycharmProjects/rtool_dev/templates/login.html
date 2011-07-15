@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
-{% block content %}
-<h1>Login From</h1>
-
+{% block menu %}
+{% block menu_title %}Login Form {% endblock %}
+<br><br>Please login, {{msg}}!
 {% if login_form %}
 <form method="POST" action="/login">
    {{login_form.render()}}
 </form>
 {% endif %}
+       {% block menu_items %}
+{% endblock %}
+  {% endblock %}

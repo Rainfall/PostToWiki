@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<h1>Events</h1>
+        <br>
+<p align="justify">
+ Events will be here very soon!
+</p>
+{% endblock %}
+    {% block menu %}
+        <h3>{% block menu_title %}Main Menu<br><br>{% endblock %}</h3>
+                <ul>
+				{% block menu_items %}
+                <li><a href="/">About System</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li class="selected"><a href="/event">Events</a></li>
+                {% endblock %}
+		       	</ul>
+    {% endblock %}

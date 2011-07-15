@@ -226,9 +226,34 @@ a:hover
 
 #secondaryContent
 {
-	float: left;
+	margin-left: -26px;
+    float: left;
 	width: 15em;
 	padding: 1.5em;
+}
+
+#secondaryContent li {
+  list-style-type: none;
+  padding-left: 30px;
+  width: 225px;
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+#secondaryContent li a{
+  text-decoration: none;
+}
+
+#secondaryContent .selected {
+ background-color: #696969;
+  list-style-type: none;
+  padding-left: 30px;
+  width: 225px;
+}
+
+#secondaryContent .selected a {
+    text-decoration: none;
+    color: white;
 }
 
 /* Footer */

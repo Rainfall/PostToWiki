@@ -12,21 +12,21 @@ from rtool import session
 LoginForm = form.Form(
     form.Textbox("login", description="Login"),
     form.Password("password", description="Password"),
-    form.Button("submit", type="submit", description="Login"),
+    form.Button("Login", type="submit", description="Login"),
     )
 
 class Login(rtool.page):
     path = "/login"
 
     def GET(self):        
-        return web.ctx.render.login(login_form = LoginForm())
+        return web.ctx.render.login(login_form = LoginForm(), msg="Anonymous")
     
     def POST(self):
         login_form = LoginForm()
         
         if not login_form.validates():
-            return web.ctx.render.login(login_form = login_form)
+            return web.ctx.render.login(login_form = login_form, msg="Anonymous")
 
         web.ctx.session.user = login_form.value["login"]
-        raise web.seeother("/main")
+        raise web.seeother("/")
 

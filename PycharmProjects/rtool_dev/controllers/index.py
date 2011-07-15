@@ -10,6 +10,6 @@ class Index(rtool.page):
     path = "/"
 
     def GET(self):
-        return web.ctx.render.index()
+        return web.ctx.render.index(msg = "Denis")#msg = web.ctx.session.user)
 
   

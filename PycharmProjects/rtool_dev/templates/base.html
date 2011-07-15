@@ -10,41 +10,47 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>{% block title %}{% endblock %}</title>
 <link href="/static/css/default.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="/static/favicon.ico">
 {% endblock %}
 </head>
 <body>
 <div id="outer">
 	<div id="header">
-		<h1><a href="#">Rtool</a></h1>
+		<h1><a href="/">Rtool</a></h1>
 		<h2>Performance Review System</h2>
 	</div>
-	<div id="menu">
+    <div id="menu">
 		<ul>
-			<li class="first"><a href="/" accesskey="1" title="">Home</a></li>
+			
 		</ul>
 	</div>
 	<div id="content">
+        {% if msg %}
 		<div id="primaryContentContainer">
 			<div id="primaryContent">
-				{% block content %}{% endblock %}
+				{% block content %}
+                {% endblock %}
 			</div>
 		</div>
 		<div id="secondaryContent">
             {% block menu %}
-			<h3>Menu</h3>
-			<ul>
-				<li><a href="#">Sagittis Bibendum Erat</a></li>
-				<li><a href="#">Malesuada Turpis</a></li>
-				<li><a href="#">Quis Gravida Massa</a></li>
-				<li><a href="#">Inerat Viverra Ornare</a></li>
+            <h3>{% block menu_title %}<br><br>{% endblock %}</h3>
+            <br><br>
+            <ul>
+				{% block menu_items %}{% endblock %}
 			</ul>
             {% endblock %}
 		</div>
 		<div class="clear"></div>
 	</div>
+    {% else %}
+    <script type="text/javascript">
+        location.replace("login");
+    </script>
+    {% endif %}
 	<div id="footer">
         {% block footer %}
-		<p>Copyright &copy; 2006 Sitename.com. Designed by <a href="http://www.freecsstemplates.org">Free CSS Templates</a></p>
+		<p>Copyright &copy; 2011 </p>
 	 {% endblock %}
     </div>
 </div>
