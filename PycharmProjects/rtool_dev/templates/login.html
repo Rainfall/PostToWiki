@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<h1>Login From</h1>
+
+{% if login_form %}
+<form method="POST" action="/login">
+   {{login_form.render()}}
+</form>
+{% endif %}
